@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPFDemo.ScrollViewerDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ScrollViewerDemo" Height="300" Width="300">
+
+    <ScrollViewer  Width="100" HorizontalScrollBarVisibility="Auto">
+        <Grid Height="400">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Button Name="button1" Content="button1" Grid.Row="0" Width="200"></Button>
+            <Button Name="button2" Content="button2" Grid.Row="1" Width="200"></Button>
+            <Button Name="button3" Content="button3" Grid.Row="2" Width="200"></Button>
+            <Button Name="button4" Content="button4" Grid.Row="3" Width="200"></Button>
+            <Button Name="button5" Content="button5" Grid.Row="4" Width="200"></Button>
+        </Grid>
+    </ScrollViewer>
+</Window>

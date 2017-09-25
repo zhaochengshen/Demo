@@ -1,0 +1,93 @@
+﻿<Window x:Class="WPFDemo.OpacityMaskDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="OpacityMaskDemo" 
+        WindowState="Maximized"
+        Height="300" Width="300">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/back.png"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--按钮蒙版-->
+        <Button FontSize="14" FontWeight="Bold" Content="局部透明效果的按钮">
+            <Button.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="Red"></GradientStop>
+                    <GradientStop Offset="1" Color="Transparent"></GradientStop>
+                </LinearGradientBrush>
+            </Button.OpacityMask>
+        </Button>
+        <!--图像蒙版效果-->
+        <Image Source="Images/0.jpg" Grid.Row="1" Stretch="None">
+            <Image.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="Transparent"></GradientStop>
+                    <GradientStop Offset="0.5" Color="#95EEEEFF"></GradientStop>
+                    <GradientStop Offset="1" Color="#10EFEFEF"></GradientStop>
+                </LinearGradientBrush>
+            </Image.OpacityMask>
+        </Image>
+
+        <StackPanel Grid.Row="2">
+            <Border  Name="ReflectedVisual" Width="400" CornerRadius="20,20,20,20" >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                        <GradientStop Offset="0.0" Color="#CCCCFF" />
+                        <GradientStop Offset="1.0" Color="White" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Margin="10">
+                    <TextBlock TextWrapping="Wrap" Width="300" Margin="10"> 
+                    OpacityMask属性接收一个画刷，
+                    画刷的Alpha通道决定哪部分进行透明，
+                    比如当为OpacityMask使用一个透明度的SolidColorBrush时，
+                    整个元素将会消失，如果使用不透明的SolidColorBrush时，元素将完全可见。
+                    </TextBlock>
+                    <!--在文本下面放置3个椭圆形-->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Ellipse Margin="10" Height="50" Width="50" Fill="Red" />
+                        <Ellipse Margin="10" Height="50" Width="50" Fill="Blue" />
+                        <Ellipse Margin="10" Height="50" Width="50" Fill="Gray" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Rectangle Height="1" Fill="Gray" HorizontalAlignment="Stretch" />
+            <!--反射效果的矩形-->
+            <Rectangle Height="{Binding Path=ActualHeight,ElementName=ReflectedVisual}"
+                       Width="{Binding Path=ActualWidht,ElementName=ReflectedVisual}">
+                <Rectangle.Fill>
+                    <!---创建反射-->
+                    <VisualBrush Opacity="0.75" Stretch="None" Visual="{Binding ElementName=ReflectedVisual}">
+                        <VisualBrush.RelativeTransform>
+                            <!--调整反射图形的位置和大小-->
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                <TranslateTransform Y="1"/>
+                            </TransformGroup>
+                        </VisualBrush.RelativeTransform>
+                    </VisualBrush>
+                </Rectangle.Fill>
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF000000" Offset="0.0"/>
+                        <GradientStop Color="#FF000000" Offset="0.5"/>
+                        <GradientStop Color="#FF000000" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+                <!--对反射图形应用位置效果-->
+                <Rectangle.BitmapEffect>
+                    <BlurBitmapEffect Radius="0.8" />
+                </Rectangle.BitmapEffect>
+            </Rectangle> 
+        </StackPanel> 
+    </Grid>
+</Window>

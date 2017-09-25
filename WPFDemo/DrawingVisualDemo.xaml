@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFDemo.DrawingVisualDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="DrawingVisualDemo" Height="300" Width="300">
+    <StackPanel>
+        <TextBlock TextWrapping="Wrap" Margin="20" FontSize="12">
+            本示例使用DrawingVisual对象，在程序中，一个矩形、文本和圆形对象被绘制到DrawingVisual上。
+            DrawingVisual被宿主到一个自定义的宿主对象中。
+        </TextBlock>
+        <Canvas Name="MyCanvas">
+
+        </Canvas>
+    </StackPanel>
+</Window>

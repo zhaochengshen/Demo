@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFDemo">
+    <!--定义渐变的背景色-->
+    <LinearGradientBrush x:Key="brushLinear">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="Red" Offset="0" />
+            <GradientStop Color="Yellow" Offset="0.5" />
+            <GradientStop Color="Blue" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush> 
+</ResourceDictionary>

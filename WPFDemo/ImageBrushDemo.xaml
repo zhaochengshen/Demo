@@ -1,0 +1,92 @@
+﻿<Window x:Class="WPFDemo.ImageBrushDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="ImageBrushDemo" Height="500" Width="720">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <!--使用ImageBrush设置图片的背景图-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--Viewport属性和TileMode属性-->
+            <Button  Grid.Row="0"  Content="TileMode-None" >
+                <Button.Background>
+                    <!--使用Viewport和TileMode控制重复背景图片-->
+                    <ImageBrush ImageSource="Images/0.jpg" Viewport="0,0,0.2,0.5" TileMode="None"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1"  Content="TileMode-Tile" >
+                <Button.Background>
+                    <!--使用Viewport和TileMode控制重复背景图片-->
+                    <ImageBrush ImageSource="Images/0.jpg" Viewport="0,0,0.2,0.5" TileMode="Tile"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="2"  Content="TileMode-FlipX" >
+                <Button.Background>
+                    <!--使用Viewport和TileMode控制重复背景图片-->
+                    <ImageBrush ImageSource="Images/0.jpg" Viewport="0,0,0.2,0.5" TileMode="FlipX"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="3"  Content="TileMode-FlipY" >
+                <Button.Background>
+                    <!--使用Viewport和TileMode控制重复背景图片-->
+                    <ImageBrush ImageSource="Images/0.jpg" Viewport="0,0,0.2,0.5" TileMode="FlipY"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="4"  Content="TileMode-FlipXY" >
+                <Button.Background>
+                    <!--使用Viewport和TileMode控制重复背景图片-->
+                    <ImageBrush ImageSource="Images/0.jpg" Viewport="0,0,0.2,0.5" TileMode="FlipXY"/>
+                </Button.Background>
+            </Button>
+
+
+
+            <!--Stretch属性-->
+            <Button  Grid.Row="0" Grid.Column="1"  Content="Stretch-Fill" >
+                <Button.Background>
+                    <!--使用Stretch属性Fill-->
+                    <ImageBrush ImageSource="Images/0.jpg" Stretch="Fill"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="1"   Content="Stretch-None" >
+                <Button.Background>
+                    <!--使用Stretch属性None-->
+                    <ImageBrush ImageSource="Images/0.jpg" Stretch="None"/>
+                </Button.Background>
+            </Button>
+            <Button  Grid.Row="2" Grid.Column="1"   Content="Stretch-Uniform" >
+                <Button.Background>
+                    <!--使用Stretch属性Uniform-->
+                    <ImageBrush ImageSource="Images/0.jpg" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="1"   Content="Stretch-UniformToFill" >
+                <Button.Background>
+                    <!--使用Stretch属性UniformToFill-->
+                    <ImageBrush ImageSource="Images/0.jpg" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

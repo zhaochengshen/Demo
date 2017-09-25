@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPFDemo.StretchDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="StretchDemo" Height="300" Width="300">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Stretch-None" Grid.Row="0" Grid.Column="0"></TextBlock>
+        <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Stretch-Fill" Grid.Row="1" Grid.Column="0"></TextBlock>
+        <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Stretch-Uniform" Grid.Row="2" Grid.Column="0"></TextBlock>
+        <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Stretch-UniformToFill" Grid.Row="3" Grid.Column="0"></TextBlock>
+
+        <!--为Ellipse设置Stretch属性-->
+        <Ellipse Grid.Row="0" Grid.Column="1" Fill="Yellow" Stroke="Blue" Stretch="None" />
+        <Ellipse Grid.Row="1" Grid.Column="1" Fill="Yellow" Stroke="Blue" Stretch="fill"/>
+        <Ellipse Grid.Row="2" Grid.Column="1" Fill="Yellow" Stroke="Blue" Stretch="Uniform"/>
+        <Ellipse Grid.Row="3" Grid.Column="1" Fill="Yellow" Stroke="Blue" Stretch="UniformToFill"/>
+    </Grid>
+</Window>

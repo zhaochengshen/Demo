@@ -1,0 +1,39 @@
+﻿<Window x:Class="WPFDemo.Resource_FontSize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Resource_FontSize" Height="300" Width="300" 
+        Background="{StaticResource BackgroundColor}"
+        >
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!---Grid级别的资源-->
+        <Grid.Resources>
+            <s:Double x:Key="SmallSize" >20</s:Double>
+            <s:Double x:Key="LargeSize">30</s:Double>
+        </Grid.Resources>
+        <TextBlock Text="小字体" Grid.Row="0">
+            <TextBlock.FontSize>
+                <StaticResource ResourceKey="SmallSize" />
+            </TextBlock.FontSize>
+        </TextBlock>
+        <TextBlock Text="大字体" Grid.Row="1">
+            <TextBlock.FontSize>
+                <StaticResource ResourceKey="LargeSize" />
+            </TextBlock.FontSize>
+        </TextBlock> 
+        <Button Grid.Row="2" Content="我是应用静态资源的渐变色">
+            <Button.Background>
+                <StaticResource ResourceKey="brushLinear" />
+            </Button.Background> 
+        </Button>
+    </Grid>
+</Window>

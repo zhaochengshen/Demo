@@ -1,0 +1,17 @@
+﻿<Window x:Class="WPFDemo.StackPanelDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="StackPanelDemo" Height="500" Width="800">
+    <StackPanel Orientation="Horizontal">
+        <Button Name="button1" Content="按钮1" MaxWidth="200" MinWidth="50" Margin="5,10" />
+        <Button Name="button2" Content="按钮2" MaxWidth="200" MinWidth="50" />
+        <Button Name="button3" Content="按钮3" MaxWidth="200" MinWidth="50" Margin="5,10,15,20" />
+        <Button Name="button4" Content="按钮4" MaxWidth="200" MinWidth="50" />
+        <Button Name="button5" Content="按钮5" MaxWidth="200" MinWidth="50" Margin="5" />
+    </StackPanel>
+</Window>

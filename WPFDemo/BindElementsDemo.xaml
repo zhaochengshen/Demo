@@ -1,0 +1,68 @@
+﻿<Window x:Class="WPFDemo.BindElementsDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="BindElementsDemo" Height="300" Width="300">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </Window.Resources>
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition /> <RowDefinition />
+            <RowDefinition /> <RowDefinition />
+            <RowDefinition /> <RowDefinition />
+            <RowDefinition /> <RowDefinition /> 
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Margin="5" Content="源数据" />
+        <Label Grid.Column="1" Grid.Row="0" Margin="5" Content="目标数据" />
+        <!--使用OneWay绑定模式 源数据变更目标数据变更，反之不行-->
+        <Label Grid.Row="1" Grid.Column="0" Content="OneWay Mode"></Label>
+        <TextBox Grid.Row="1" Grid.Column="0" Name="txt1"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=txt1,Path=Text,Mode=OneWay}"></TextBox>
+
+        <!--使用OneTime绑定模式 仅在启动时更新-->
+        <Label Grid.Row="2" Grid.Column="0" Content="OneTime Mode"></Label>
+        <TextBox Grid.Row="2" Grid.Column="0" Name="txt3"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=txt3,Path=Text,Mode=OneTime}"></TextBox>
+
+        <!--使用OneWayToSource绑定模式 目标数据更新源数据更新，反之不行-->
+        <Label Grid.Row="3" Grid.Column="0" Content="OneWayToSource Mode"></Label>
+        <TextBox Grid.Row="3" Grid.Column="0" Name="txt4"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=txt4,Path=Text,Mode=OneWayToSource}"></TextBox>
+
+        <!--使用TwoWay绑定模式 源数据变更目标数据变更，反之可以-->
+        <Label Grid.Row="4" Grid.Column="0" Content="TwoWay Modem默认"></Label>
+        <TextBox Grid.Row="4" Grid.Column="0" Name="txt2"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ElementName=txt2,Path=Text,Mode=TwoWay}"></TextBox>
+
+        <!--使用TwoWay绑定模式调用UpdateSource时更新 源数据变更目标数据变更，反之可以-->
+        <Label Grid.Row="5" Grid.Column="0" Content="TwoWay Modem 目标数据更改Explicit调用UpdateSource时更新"></Label>
+        <TextBox Grid.Row="5" Grid.Column="0" Name="txt5"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding ElementName=txt5,Path=Text,Mode=TwoWay,UpdateSourceTrigger=Explicit}"></TextBox>
+
+
+        <!--使用TwoWay绑定模式失去焦点更新 源数据变更目标数据变更，反之可以-->
+        <Label Grid.Row="6" Grid.Column="0" Content="TwoWay Modem 目标数据更改失去焦点时更新"></Label>
+        <TextBox Grid.Row="6" Grid.Column="0" Name="txt6"></TextBox>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ElementName=txt6,Path=Text,Mode=TwoWay,UpdateSourceTrigger=LostFocus}"></TextBox>
+
+
+        <!--使用TwoWay绑定模式立即更新 源数据变更目标数据变更，反之可以-->
+        <Label Grid.Row="7" Grid.Column="0" Content="TwoWay Modem 目标数据更改立即更新"></Label>
+        <TextBox Grid.Row="7" Grid.Column="0" Name="txt7"></TextBox>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ElementName=txt7,Path=Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+    </Grid>
+</Window>

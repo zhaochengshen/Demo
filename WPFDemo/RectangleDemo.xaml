@@ -1,0 +1,57 @@
+﻿<Window x:Class="WPFDemo.RectangleDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="RectangleDemo" Height="400" Width="800"> 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0"  Margin="10"    Stroke="Black" StrokeThickness="2" Canvas.Left="10" Canvas.Top="10" />
+        <Canvas  Grid.Row="1"  Background="Red">
+            <!--绘制一个长100 高40的矩形 填充颜色为#FF169AE6-->
+            <Rectangle  Width="100" Height="40" Fill="#FF169AE6" Canvas.Left="10" Canvas.Top="10">
+            </Rectangle>
+            <!--绘制一个长100 高40的矩形 填充颜色#FF169AE6 边框Black-->
+            <Rectangle  Width="100" Height="40" Fill="#FF169AE6" Stroke="Black" StrokeThickness="2" Canvas.Left="10" Canvas.Top="60"/>
+            <!--绘制一个长100 高40的矩形 无填充颜色 边框Black-->
+            <Rectangle  Width="100" Height="40" Stroke="Black" StrokeThickness="2" Canvas.Left="10" Canvas.Top="110"/>
+
+            <!--绘制一个长100 高40的圆角矩形 填充颜色为#FF169AE6-->
+            <Rectangle  Width="100" Height="40" Fill="#FF169AE6" RadiusX="5" RadiusY="5" Canvas.Left="120" Canvas.Top="10">
+            </Rectangle>
+            <!--绘制一个长100 高40的圆角矩形 填充颜色#FF169AE6 边框Black-->
+            <Rectangle  Width="100" Height="40" Fill="#FF169AE6" Stroke="Black" StrokeThickness="2" RadiusX="5" RadiusY="5" Canvas.Left="120" Canvas.Top="60"/>
+            <!--绘制一个长100 高40的圆角矩形 无填充颜色 边框Black-->
+            <Rectangle  Width="100" Height="40" Stroke="Black" StrokeThickness="2" RadiusX="5" RadiusY="5" Canvas.Left="120" Canvas.Top="110"/>
+
+            <!--绘制一个长100 高40的圆 填充颜色为#FF169AE6-->
+            <Rectangle  Width="40" Height="40" Fill="#FF169AE6" RadiusX="20" RadiusY="20" Canvas.Left="230" Canvas.Top="10">
+            </Rectangle>
+            <!--绘制一个长100 高40的圆 填充颜色#FF169AE6 边框Black-->
+            <Rectangle  Width="40" Height="40" Fill="#FF169AE6" Stroke="Black" StrokeThickness="2" RadiusX="20" RadiusY="20" Canvas.Left="230" Canvas.Top="60"/>
+            <!--绘制一个长100 高40的圆 无填充颜色 边框Black-->
+            <Rectangle  Width="40" Height="40" Stroke="Black" StrokeThickness="2" RadiusX="20" RadiusY="20" Canvas.Left="230" Canvas.Top="110"/>
+
+            <!--绘制一个长100 高40的椭圆 填充颜色为#FF169AE6-->
+            <Rectangle  Width="100" Height="40" Fill="#FF169AE6" RadiusX="20" RadiusY="20" Canvas.Left="280" Canvas.Top="10">
+            </Rectangle>
+            <!--绘制一个长100 高40的椭圆 填充颜色#FF169AE6 边框Black-->
+            <Rectangle  Width="100" Height="40" Fill="#FF169AE6" Stroke="Black" StrokeThickness="2" RadiusX="20" RadiusY="20" Canvas.Left="280" Canvas.Top="60"/>
+            <!--绘制一个长100 高40的椭圆 无填充颜色 边框Black-->
+            <Rectangle  Width="100" Height="40" Stroke="Black" StrokeThickness="2" RadiusX="20" RadiusY="20" Canvas.Left="280" Canvas.Top="110"/>
+
+            <!--绘制一个长100 高40的椭圆 填充颜色为#FF169AE6-->
+            <Rectangle  Width="40" Height="40" Fill="#FF169AE6"   Canvas.Left="390" Canvas.Top="10">
+            </Rectangle>
+            <!--绘制一个长100 高40的椭圆 填充颜色#FF169AE6 边框Black-->
+            <Rectangle  Width="40" Height="40" Fill="#FF169AE6" Stroke="Black" StrokeThickness="2"   Canvas.Left="390" Canvas.Top="60"/>
+            <!--绘制一个长100 高40的椭圆 无填充颜色 边框Black-->
+            <Rectangle  Width="40" Height="40" Stroke="Black" StrokeThickness="2"  Canvas.Left="390" Canvas.Top="110"/>
+        </Canvas>
+    </Grid>
+</Window>

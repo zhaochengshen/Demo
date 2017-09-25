@@ -1,0 +1,38 @@
+﻿<Window x:Class="WPFDemo.ScrollViewerDemo_CustomPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="ScrollViewerDemo_CustomPage" Height="300" Width="300">
+    <DockPanel Background="AliceBlue">
+        <TextBlock DockPanel.Dock="Top" Text="ScrollViewer 自定义滚动" FontSize="20" Background="AntiqueWhite" Margin="10"></TextBlock>
+        <TextBlock DockPanel.Dock="Top" Text="使用左侧按钮进行翻页" FontSize="20" Background="AntiqueWhite" Margin="10"></TextBlock>
+        <StackPanel DockPanel.Dock="Left" Width="150" Background="Aqua">
+            <Button Name="btnLineUp" Content="向上滚动"    Margin="10" Padding="10" Click="btnLineUp_Click" />
+            <Button Name="btnLineDown" Content="向下滚动"  Margin="10" Padding="10" Click="btnLineDown_Click" />
+            <Button Name="btnLineLeft" Content="向左滚动"  Margin="10" Padding="10" Click="btnLineLeft_Click" />
+            <Button Name="btnLineRight" Content="向右滚动" Margin="10" Padding="10" Click="btnLineRight_Click" />
+            <Button Name="btnPageUp" Content="向上翻页"    Margin="10,30,10,10" Padding="10" Click="btnPageUp_Click" />
+            <Button Name="btnPageDown" Content="向上翻页"  Margin="10" Padding="10" Click="btnPageDown_Click" />
+            <Button Name="btnPageLeft" Content="向左翻页"  Margin="10" Padding="10" Click="btnPageLeft_Click" />
+            <Button Name="btnPageRight" Content="向右翻页" Margin="10" Padding="10" Click="btnPageRight_Click" />
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Width="150" Background="Aqua">
+            <Button Name="btnLineHome" Content="回到首行"    Margin="10" Padding="10" Click="btnLineHome_Click" />
+            <Button Name="btnLineEnd" Content="回到尾行"    Margin="10" Padding="10" Click="btnLineEnd_Click" />
+            <Button Name="btnColumnHome" Content="回到首列"    Margin="10" Padding="10" Click="btnColumnHome_Click" />
+            <Button Name="btnColumnEnd" Content="回到尾列"    Margin="10" Padding="10" Click="btnColumnEnd_Click" />
+            <Button Name="btnLineOffsetUp" Content="向下偏移3个单位"    Margin="10,30,10,10" Padding="10" Click="btnLineOffsetUp_Click" />
+            <Button Name="btnColumnOffsetRight" Content="向右偏移3个单位"    Margin="10" Padding="10" Click="btnColumnOffsetRight_Click" />
+            <Button Name="btnLineOffsetDown" Content="向上偏移3个单位"    Margin="10" Padding="10" Click="btnLineOffsetDown_Click" />
+            <Button Name="btnColumnOffsetLeft" Content="向左偏移3个单位"    Margin="10" Padding="10" Click="btnColumnOffsetLeft_Click" />
+        </StackPanel>
+        <Border Width="500" Height="400" BorderThickness="2" Background="Beige"  VerticalAlignment="Top" HorizontalAlignment="Left">
+            <ScrollViewer Name="SVText" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+                <TextBlock Name="txtText" Width="800" Height="900" TextWrapping="Wrap"></TextBlock>
+            </ScrollViewer>
+        </Border>
+    </DockPanel>
+</Window>

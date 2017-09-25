@@ -1,0 +1,99 @@
+﻿<Window x:Class="WPFDemo.StyleDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="StyleDemo" Height="300" Width="300">
+    <Window.Resources>
+        <!--基本样式 button 按钮样式-->
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Control.FontFamily" Value="楷体"></Setter>
+            <Setter Property="Control.FontSize" Value="20"></Setter>
+        </Style>
+        <!--基本样式 Textblock样式-->
+        <Style x:Key="TextBlockStyle">
+            <Setter Property="Control.FontFamily" Value="楷体"></Setter>
+            <Setter Property="Control.FontSize" Value="40"></Setter>
+        </Style>
+        <!--仅限Button使用-->
+        <Style x:Key="buttonBackgroundColor">
+            <Setter Property="Button.Background" Value="LightGreen"></Setter>
+        </Style>
+        <!--使用TargetType指定样式使用的控件类型  自动套用样式-->
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+        </Style>
+        <!--控件基类样式-->
+        <Style x:Key="BaseStyle">
+            <Setter Property="Control.FontSize" Value="20"></Setter>
+        </Style>
+        <!--继承BaseStyle-->
+        <Style x:Key="BaseButtonSyle" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Control.Foreground" Value="Red"></Setter>
+            <Setter Property="Control.FontWeight" Value="Bold"></Setter>
+        </Style>
+
+        <!--绑定事件处理器-->
+        <Style x:Key="MouseEventHightlightStyle">
+            <!--定义当鼠标移动到按钮的事件-->
+            <EventSetter Event="Button.MouseEnter" Handler="ButtonMouseEnter"></EventSetter>
+            <!--定义当鼠标移动出按钮的事件-->
+            <EventSetter Event="Button.MouseLeave" Handler="ButtonMouseLeave"></EventSetter>
+            <Setter Property="Button.FontSize" Value="20"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Content="应用样式按钮" Style="{StaticResource ButtonStyle}"></Button>
+        <Button Grid.Row="1" FontSize="10" Content="应用样式按钮并设置字体大小" ></Button>
+        <TextBlock Grid.Row="2" Text="应用样式文本" Style="{StaticResource TextBlockStyle}"></TextBlock>
+        <TextBlock Grid.Row="3" Text="没有应用样式文本" ></TextBlock>
+        <Button Grid.Row="4"  FontSize="10" Content="使用内联样式设置字体为红色 背景为黄色" >
+            <!--内联样式-->
+            <Button.Style>
+                <Style>
+                    <Setter Property="Control.Foreground" Value="Red"></Setter>
+                    <Setter Property="Control.Background" Value="Yellow"></Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Grid.Row="5" Content="设置背景色为渐变（在样式中使用属性）">
+            <!--样式中使用属性-->
+            <Button.Style>
+                <Style>
+                    <Setter Property="Button.Background">
+                        <Setter.Value>
+                            <LinearGradientBrush  StartPoint="0,0" EndPoint="1,1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="Red" Offset="0"/>
+                                    <GradientStop Color="Yellow" Offset="0.5"/>
+                                    <GradientStop Color="Blue" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Grid.Row="6" Content="我是button，我设置了button样式 - 背景为LightGreen，起作用" Style="{StaticResource buttonBackgroundColor}"></Button>
+        <TextBlock Grid.Row="7" Text="我是textblock，我设置了button样式 - 背景为LightGreen;不起作用" Style="{StaticResource buttonBackgroundColor}"></TextBlock>
+        <Label Grid.Row="8"   Content="我是Label，Target设置Label 我自动套用Label样式 字体为30 字体为红色"></Label>
+        <Button Grid.Row="9" Style="{StaticResource BaseButtonSyle}" Content="我使用的是继承样式"></Button>
+        <Button Grid.Row="10" Style="{StaticResource MouseEventHightlightStyle}" Content="我是button，绑定了鼠标事件，鼠标移如高亮显示"></Button>
+    </Grid>
+</Window>

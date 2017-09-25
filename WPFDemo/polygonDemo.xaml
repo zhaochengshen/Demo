@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPFDemo.polygonDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="polygonDemo" Height="500" Width="600">
+    <Canvas>
+
+        <!--使用Polyline绘制折线-->
+        <Polyline Stroke="Black" StrokeThickness="2"  
+                  Points="10 200,30 150,50 180,80 120,100 170,120 150,130 200" ></Polyline>
+        <!--使用Polygon绘制折线 会自动封闭-->
+        <Polygon Stroke="Black" StrokeThickness="2"  
+                  Points="10 200,30 150,50 180,80 120,100 170,120 150,130 200" Canvas.Left="200"></Polygon>
+
+        <!--polygon 填充方式EvenOdd -->
+        <Polygon Stroke="Black" StrokeThickness="1" Fill="Red" FillRule="EvenOdd" Points="15,200 68,70 110,200 0,125 135,125"  Canvas.Left="50" Canvas.Top="200"/>
+        <!--polygon 填充方式Nonzero -->
+        <Polygon Stroke="Black" StrokeThickness="1" Fill="Red"  FillRule="Nonzero" Points="15,200 68,70 110,200 0,125 135,125" Canvas.Left="200" Canvas.Top="200" />
+    </Canvas>
+</Window>

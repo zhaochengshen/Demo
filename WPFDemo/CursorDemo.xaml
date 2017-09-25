@@ -1,0 +1,42 @@
+﻿<Window x:Class="WPFDemo.CursorDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="CursorDemo" Height="300" Width="300">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Background="LightBlue"  Foreground="Red" Margin="0,0,0,10" FontSize="20">常用鼠标光标符号</TextBlock>
+        <UniformGrid Rows="3" Columns="10" >
+            <Button Cursor="AppStarting" Content="AppStarting" Background="LightBlue" ></Button>
+            <Button Cursor="Arrow" Content="Arrow" Background="LightGreen" ></Button>
+            <Button Cursor="ArrowCD" Content="ArrowCD" Background="LightBlue" ></Button>
+            <Button Cursor="Cross" Content="Cross" Background="LightGreen" ></Button>
+            <Button Cursor="Hand" Content="Hand" Background="LightBlue" ></Button>
+            <Button Cursor="Help" Content="Help" Background="LightGreen" ></Button>
+            <Button Cursor="IBeam" Content="IBeam" Background="LightBlue" ></Button>
+            <Button Cursor="No" Content="No" Background="LightGreen" ></Button>
+            <Button Cursor="None" Content="None" Background="LightBlue" ></Button>
+            <Button Cursor="Pen" Content="Pen" Background="LightGreen" ></Button>
+            <Button Cursor="ScrollAll" Content="ScrollAll" Background="LightBlue" ></Button>
+            <Button Cursor="ScrollE" Content="ScrollE" Background="LightGreen" ></Button>
+            <Button Cursor="ScrollN" Content="ScrollN" Background="LightBlue" ></Button>
+            <Button Cursor="ScrollNE" Content="ScrollNE" Background="LightGreen" ></Button>
+            <Button Cursor="ScrollNS" Content="ScrollNS" Background="LightBlue" ></Button>
+            <Button Cursor="ScrollNW" Content="ScrollNW" Background="LightGreen" ></Button>
+            <Button Cursor="ScrollS" Content="ScrollS" Background="LightBlue" ></Button>
+            <Button Cursor="ScrollSE" Content="ScrollSE" Background="LightGreen" ></Button>
+            <Button Cursor="ScrollSW" Content="ScrollSW" Background="LightBlue" ></Button>
+            <Button Cursor="ScrollW" Content="ScrollW" Background="LightGreen" ></Button>
+            <Button Cursor="ScrollWE" Content="ScrollWE" Background="LightBlue" ></Button>
+            <Button Cursor="SizeAll" Content="SizeAll" Background="LightGreen" ></Button>
+            <Button Cursor="SizeNESW" Content="SizeNESW" Background="LightBlue" ></Button>
+            <Button Cursor="SizeNS" Content="SizeNS" Background="LightGreen" ></Button>
+            <Button Cursor="SizeNWSE" Content="SizeNWSE" Background="LightBlue" ></Button>
+            <Button Cursor="SizeWE" Content="SizeWE" Background="LightGreen" ></Button>
+            <Button Cursor="UpArrow" Content="UpArrow" Background="LightBlue" ></Button>
+            <Button Cursor="Wait" Content="Wait" Background="LightGreen" ></Button> 
+        </UniformGrid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,49 @@
+﻿<Window x:Class="WPFDemo.ExpanderDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="ExpanderDemo" Height="300" Width="300">
+    <Grid> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Expander Header="折叠菜单1" Grid.Row="0" Background="AliceBlue"   >
+            <StackPanel>
+                <CheckBox Margin="5">选项1</CheckBox>
+                <CheckBox Margin="5">选项2</CheckBox>
+                <CheckBox Margin="5">选项3</CheckBox>
+            </StackPanel>
+        </Expander>
+        <Expander Header="折叠菜单2" Grid.Row="1"  Background="Aqua" IsExpanded="True">
+            <StackPanel>
+                <CheckBox Margin="5">选项1</CheckBox>
+                <CheckBox Margin="5">选项2</CheckBox>
+                <CheckBox Margin="5">选项3</CheckBox>
+            </StackPanel>
+        </Expander>
+        <Expander Header="展开我时我才加载内容，折叠回去我清空内容" Grid.Row="2" Background="Beige"  Collapsed="Expander_Collapsed" Expanded="Expander_Expanded">
+            <ScrollViewer MaxHeight="120" HorizontalScrollBarVisibility="Disabled">
+                <TextBlock Name="txtText"></TextBlock>
+            </ScrollViewer>
+        </Expander>
+        <Expander Grid.Row="3" Background="Beige" >
+            <Expander.Header>
+                <StackPanel>
+                    <TextBlock>我是自定义折叠菜单Header</TextBlock>
+                    <Button>在Header中添加按钮</Button>
+                </StackPanel>
+            </Expander.Header>
+            <StackPanel>
+                <CheckBox Margin="5">选项1</CheckBox>
+                <CheckBox Margin="5">选项2</CheckBox>
+                <CheckBox Margin="5">选项3</CheckBox>
+            </StackPanel>
+        </Expander>
+    </Grid>
+</Window>

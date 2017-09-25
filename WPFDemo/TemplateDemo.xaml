@@ -1,0 +1,38 @@
+﻿<Window x:Class="WPFDemo.TemplateDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="TemplateDemo" Height="300" Width="300">
+    <Window.Resources>
+        <ControlTemplate x:Key="ButtomTemplate" TargetType="{x:Type Button}">
+
+            <Border Name="Border" BorderBrush="{TemplateBinding Foreground}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="5" Background="{TemplateBinding Background}"
+                    TextBlock.Foreground="{TemplateBinding Foreground}"
+                    Margin="{TemplateBinding Margin}">
+                <ContentPresenter RecognizesAccessKey="True"
+                                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                  VerticalAlignment="{TemplateBinding VerticalAlignment}">
+
+                </ContentPresenter>
+            </Border>
+            <!--设置模板触发器-->
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver"  Value="True">
+                    <Setter TargetName="Border" Property="Background" Value="Red"></Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="Border" Property="Background" Value="Yellow"></Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid> 
+
+        <Button   Template="{StaticResource ButtomTemplate}" Margin="10" Background="LightBlue" Content="我是套用模板的button"></Button>
+    </Grid>
+</Window>

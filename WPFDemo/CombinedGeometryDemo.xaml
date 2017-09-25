@@ -1,0 +1,79 @@
+﻿<Window x:Class="WPFDemo.CombinedGeometryDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="CombinedGeometryDemo" Height="530" Width="500">
+    <Canvas>
+        <StackPanel Canvas.Left="10" Canvas.Top="10">
+            <TextBlock Text="Union计算组合图形" />
+            <Path Stroke="Black" StrokeThickness="1" Fill="Yellow" >
+                <Path.Data>
+                    <!---使用Union组合多个图形-->
+                    <CombinedGeometry GeometryCombineMode="Union">
+                        <CombinedGeometry.Geometry1>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="75,75"/>
+                        </CombinedGeometry.Geometry1>
+                        <CombinedGeometry.Geometry2>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="125,75"/>
+                        </CombinedGeometry.Geometry2>
+                    </CombinedGeometry>
+                </Path.Data>
+            </Path>
+        </StackPanel>
+
+        <StackPanel Canvas.Left="250" Canvas.Top="10">
+            <TextBlock Text="Exclude计算组合图形" />
+            <Path Stroke="Black" StrokeThickness="1" Fill="Yellow" >
+                <Path.Data>
+                    <!---使用Exclude组合多个图形-->
+                    <CombinedGeometry GeometryCombineMode="Exclude">
+                        <CombinedGeometry.Geometry1>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="75,75"/>
+                        </CombinedGeometry.Geometry1>
+                        <CombinedGeometry.Geometry2>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="125,75"/>
+                        </CombinedGeometry.Geometry2>
+                    </CombinedGeometry>
+                </Path.Data>
+            </Path>
+        </StackPanel>
+
+        <StackPanel Canvas.Left="10" Canvas.Top="250">
+            <TextBlock Text="Intersect计算组合图形" />
+            <Path Stroke="Black" StrokeThickness="1" Fill="Yellow" >
+                <Path.Data>
+                    <!---使用Intersect组合多个图形-->
+                    <CombinedGeometry GeometryCombineMode="Intersect">
+                        <CombinedGeometry.Geometry1>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="75,75"/>
+                        </CombinedGeometry.Geometry1>
+                        <CombinedGeometry.Geometry2>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="125,75"/>
+                        </CombinedGeometry.Geometry2>
+                    </CombinedGeometry>
+                </Path.Data>
+            </Path>
+        </StackPanel>
+
+        <StackPanel Canvas.Left="250" Canvas.Top="250">
+            <TextBlock Text="Xor计算组合图形" />
+            <Path Stroke="Black" StrokeThickness="1" Fill="Yellow" >
+                <Path.Data>
+                    <!---使用Xor组合多个图形-->
+                    <CombinedGeometry GeometryCombineMode="Xor">
+                        <CombinedGeometry.Geometry1>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="75,75"/>
+                        </CombinedGeometry.Geometry1>
+                        <CombinedGeometry.Geometry2>
+                            <EllipseGeometry  RadiusX="50" RadiusY="50" Center="125,75"/>
+                        </CombinedGeometry.Geometry2>
+                    </CombinedGeometry>
+                </Path.Data>
+            </Path>
+        </StackPanel>
+    </Canvas>
+</Window>

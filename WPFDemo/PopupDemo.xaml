@@ -1,0 +1,43 @@
+﻿<Window x:Class="WPFDemo.PopupDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="PopupDemo" Height="500" Width="800">
+    <Grid  ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Button HorizontalAlignment="Left" Click="Button_Click" Width="150" Grid.Row="0">
+            <StackPanel>
+                <TextBlock>单击这里弹出窗口</TextBlock>
+                <Popup Name="myPopup" MaxHeight="200" StaysOpen="False" Placement="Mouse" AllowsTransparency="True" PopupAnimation="Fade">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="AliceBlue">
+                        <TextBlock Name="myPopupText" TextWrapping="Wrap">
+                            Popup示例，StaysOpen为false，表示可以单击任意位置关闭Popup,PopuAnimation为Fade表示动画弹出
+                        </TextBlock>
+                    </Border>
+                </Popup>
+            </StackPanel>
+        </Button>
+        <Canvas  Background="AliceBlue" Grid.Row="1">
+            <Button Name="btn1" Margin="100"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Height="150">button</Button>
+            <Popup IsOpen="True" PlacementTarget="{Binding ElementName=btn1}"  Placement="Bottom">
+                <TextBlock Background="LightBlue">Placement=Bottom</TextBlock>
+            </Popup> 
+            <Popup IsOpen="True" PlacementTarget="{Binding ElementName=btn1}" Placement="Top">
+                <TextBlock  Background="LightBlue">Placement=Top</TextBlock>
+            </Popup> 
+            <Popup IsOpen="True" PlacementTarget="{Binding ElementName=btn1}" Placement="Left">
+                <TextBlock  Background="LightBlue">Placement=Left</TextBlock>
+            </Popup> 
+            <Popup IsOpen="True" PlacementTarget="{Binding ElementName=btn1}" Placement="Right">
+                <TextBlock  Background="LightBlue">Placement=Right</TextBlock>
+            </Popup>
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+﻿<Application x:Class="WPFDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+             StartupUri="BindSourceDemo.xaml" 
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="BackgroundColor" Color="Yellow"></SolidColorBrush>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DictionaryDemo.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

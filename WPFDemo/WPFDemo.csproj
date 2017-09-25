@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D8D6BDE-DCFC-463B-9EE0-486BAF74B841}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WPFDemo</RootNamespace>
+    <AssemblyName>WPFDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BindElementsDemo.xaml.cs">
+      <DependentUpon>BindElementsDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindElemntsMulPropertyDemo.xaml.cs">
+      <DependentUpon>BindElemntsMulPropertyDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindSourceDemo.xaml.cs">
+      <DependentUpon>BindSourceDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlurDemo.xaml.cs">
+      <DependentUpon>BlurDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BorderDemo.xaml.cs">
+      <DependentUpon>BorderDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BurshDemo.xaml.cs">
+      <DependentUpon>BurshDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CapDemo.xaml.cs">
+      <DependentUpon>CapDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CombinedGeometryDemo.xaml.cs">
+      <DependentUpon>CombinedGeometryDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CursorDemo.xaml.cs">
+      <DependentUpon>CursorDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashDemo.xaml.cs">
+      <DependentUpon>DashDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DockPanelDemo.xaml.cs">
+      <DependentUpon>DockPanelDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrawingVisualDemo.xaml.cs">
+      <DependentUpon>DrawingVisualDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EllipseDemo.xaml.cs">
+      <DependentUpon>EllipseDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpanderDemo.xaml.cs">
+      <DependentUpon>ExpanderDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeometryDemo.xaml.cs">
+      <DependentUpon>GeometryDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridDemo.xaml.cs">
+      <DependentUpon>GridDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBoxDemo.xaml.cs">
+      <DependentUpon>GroupBoxDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBrushDemo.xaml.cs">
+      <DependentUpon>ImageBrushDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LatBox.xaml.cs">
+      <DependentUpon>LatBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGradientBrushDemo.xaml.cs">
+      <DependentUpon>LinearGradientBrushDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LineDemo.xaml.cs">
+      <DependentUpon>LineDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxDemo.xaml.cs">
+      <DependentUpon>ListBoxDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogicTree.xaml.cs">
+      <DependentUpon>LogicTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyBook.cs" />
+    <Compile Include="OpacityDemo.xaml.cs">
+      <DependentUpon>OpacityDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OpacityMaskDemo.xaml.cs">
+      <DependentUpon>OpacityMaskDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PathGeometryDemo.xaml.cs">
+      <DependentUpon>PathGeometryDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="polygonDemo.xaml.cs">
+      <DependentUpon>polygonDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PolyLineDemo.xaml.cs">
+      <DependentUpon>PolyLineDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDemo.xaml.cs">
+      <DependentUpon>PopupDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarDemo.xaml.cs">
+      <DependentUpon>ProgressBarDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGradientBrushDemo.xaml.cs">
+      <DependentUpon>RadialGradientBrushDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RectangleDemo.xaml.cs">
+      <DependentUpon>RectangleDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource-FontSize.xaml.cs">
+      <DependentUpon>Resource-FontSize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RotateTransformDemo.xaml.cs">
+      <DependentUpon>RotateTransformDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScaleTransformDemo.xaml.cs">
+      <DependentUpon>ScaleTransformDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollViewerDemo-CustomPage.xaml.cs">
+      <DependentUpon>ScrollViewerDemo-CustomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollViewerDemo.xaml.cs">
+      <DependentUpon>ScrollViewerDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SingleApplicationBase.cs" />
+    <Compile Include="SkewTransformDemo.xaml.cs">
+      <DependentUpon>SkewTransformDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SliderDemo.xaml.cs">
+      <DependentUpon>SliderDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StackPanelDemo.xaml.cs">
+      <DependentUpon>StackPanelDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="StretchDemo.xaml.cs">
+      <DependentUpon>StretchDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleDemo.xaml.cs">
+      <DependentUpon>StyleDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleTriggerDemo.xaml.cs">
+      <DependentUpon>StyleTriggerDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabItemDemo.xaml.cs">
+      <DependentUpon>TabItemDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateDemo.xaml.cs">
+      <DependentUpon>TemplateDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTipDemo.xaml.cs">
+      <DependentUpon>ToolTipDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransformGroupDemo.xaml.cs">
+      <DependentUpon>TransformGroupDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TranslateTransformDemo.xaml.cs">
+      <DependentUpon>TranslateTransformDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnderStandingDP.xaml.cs">
+      <DependentUpon>UnderStandingDP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UniformGrid.xaml.cs">
+      <DependentUpon>UniformGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBoxDemo.xaml.cs">
+      <DependentUpon>ViewBoxDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualBrushDemo.xaml.cs">
+      <DependentUpon>VisualBrushDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WrapPanelDemo.xaml.cs">
+      <DependentUpon>WrapPanelDemo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BindElementsDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BindElemntsMulPropertyDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BindSourceDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BlurDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BorderDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BurshDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CapDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CombinedGeometryDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CursorDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DictionaryDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DockPanelDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DrawingVisualDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EllipseDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpanderDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeometryDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupBoxDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageBrushDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LatBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LinearGradientBrushDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LineDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListBoxDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogicTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="OpacityDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OpacityMaskDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PathGeometryDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="polygonDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PolyLineDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PopupDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgressBarDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RadialGradientBrushDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RectangleDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource-FontSize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RotateTransformDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScaleTransformDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollViewerDemo-CustomPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollViewerDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SkewTransformDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SliderDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StackPanelDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StretchDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleTriggerDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabItemDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemplateDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolTipDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransformGroupDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TranslateTransformDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnderStandingDP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UniformGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewBoxDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisualBrushDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WrapPanelDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolTip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\0.jpg" />
+    <Resource Include="Images\1.jpg" />
+    <Resource Include="Images\2.jpg" />
+    <Resource Include="Images\3.jpg" />
+    <Resource Include="Images\4.jpg" />
+    <Resource Include="Images\5.jpg" />
+    <Resource Include="Images\6.jpg" />
+    <Resource Include="Images\7.jpg" />
+    <Resource Include="Images\8.jpg" />
+    <Resource Include="Images\9.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

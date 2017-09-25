@@ -1,0 +1,146 @@
+﻿<Window x:Class="WPFDemo.ListBoxDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="ListBoxDemo" Height="500" Width="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Background="LightBlue">
+            <TextBlock FontSize="20">
+                ListBox应用示例
+            </TextBlock>
+        </StackPanel>
+        <Grid DockPanel.Dock="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Background="LightBlue" Grid.Column="0">
+                <StackPanel>
+                    <TextBlock FontSize="14">单选</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock>待选</TextBlock> 
+                    <ScrollViewer MaxHeight="200" HorizontalScrollBarVisibility="Auto">
+                        <ListBox Name="listBox1"  Height="200"   SelectionMode="Extended" SelectionChanged="listBox1_SelectionChanged">
+                            <ListBoxItem>
+                                <Image Source="Images/0.jpg" Width="30" Height="30"></Image>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/1.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/2.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/3.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/4.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/5.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/6.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/7.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/8.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <StackPanel>
+                                    <Image Source="Images/9.jpg" Width="30" Height="30"></Image>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </ScrollViewer>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock>已选</TextBlock>
+                    <ScrollViewer MaxHeight="200" HorizontalScrollBarVisibility="Auto">
+                        <ListBox Name="listBox1_Selected" MaxHeight="200" Height="200"  SelectionChanged="listBox1_Selected_SelectionChanged">
+                        </ListBox>
+                    </ScrollViewer>
+                </StackPanel> 
+            </StackPanel>
+
+            <StackPanel Background="LightGreen" Grid.Column="1">
+                <StackPanel>
+                    <TextBlock FontSize="14">多选</TextBlock> 
+                    <TextBlock>待选 <Button Name="btnList2Ok" Click="btnList2Ok_Click">确认选择</Button>
+                     <Button Name="btnList2Cancel" Click="btnList2Cancel_Click">清空选择</Button>
+                    </TextBlock>
+                    <ScrollViewer MaxHeight="200" Height="200" >
+                        <ListBox Name="listbox2"  >
+                            <ListBoxItem>
+                                <CheckBox>选项0</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项1</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项2</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项3</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项4</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项5</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项6</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项7</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项8</CheckBox>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <CheckBox>选项9</CheckBox>
+                            </ListBoxItem>
+                        </ListBox>
+                    </ScrollViewer>
+                    <TextBlock>已选</TextBlock>
+                    <ScrollViewer MaxHeight="200" Height="200">
+                        <ListBox Name="listbox2_Selected"> 
+                        </ListBox>
+                    </ScrollViewer>
+                </StackPanel> 
+            </StackPanel> 
+        </Grid>
+    </DockPanel>
+</Window>
